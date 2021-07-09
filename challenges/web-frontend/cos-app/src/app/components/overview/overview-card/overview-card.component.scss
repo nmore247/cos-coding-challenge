@@ -1,0 +1,32 @@
+.card-container {
+    position: relative;
+    width: 340px;
+    height: 340px;
+    padding: 12px;
+    margin-bottom: 132px;
+  
+    &:hover {
+      transform: scale(1.1, 1.1);
+      transition-duration: 200ms;
+      transition-timing-function: ease-out;
+      cursor: pointer;
+    }
+  
+    .remaining-time {
+      height: 20px;
+      padding: 4px;
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      background-color: orangered;
+      color: white;
+      border-radius: 2px;
+    }
+  
+    p {
+      font-family: "Roboto", sans-serif;
+      font-weight: bolder;
+      font-size: 14px;
+    }
+  }
+  

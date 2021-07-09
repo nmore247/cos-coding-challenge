@@ -1,0 +1,28 @@
+<div>
+    <mat-toolbar color="primary">
+       <p>Login Page</p>
+    </mat-toolbar>
+</div>
+<div class="row form-container">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h2 class="form-title">Car on Sale Login</h2>
+        <form (ngSubmit) = 'onSubmit(Form)' #Form="ngForm">
+            <div class="form-group">
+                <mat-form-field>
+                    <mat-label>Enter your email</mat-label>
+                    <input matInput id="email" [(ngModel)]="userId" name="email" placeholder="email" required email>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Password</mat-label>
+                    <input matInput id="password"  [(ngModel)]="loginUserData.password" name="password" placeholder="password" required minlength>
+                </mat-form-field>
+            </div>
+            <br>
+            <div class="form-buttons">
+                <button style="margin-right: 8px;" [disabled]="!Form.valid" 
+                type="submit" mat-raised-button color="primary">Login</button>
+                <button type="reset" mat-raised-button color="accent">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

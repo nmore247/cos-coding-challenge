@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+    <span style="position: relative;">Overview Auctions</span>
+
+    <div style="position: absolute; right: 16px;">
+        <button mat-raised-button (click)="logOut()">Logout</button>
+    </div>
+</mat-toolbar>
+
+<br />
+
+<div style="text-align: right; margin-right: 64px;">
+    <mat-checkbox [(ngModel)]="checked" (click)="onCheckMyAuctions()">My Auctions</mat-checkbox>
+</div>
+
+<br />
+
+<div class="row overview-container">
+    <div *ngFor="let auction of auctions" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 card-column">
+        <div *ngIf="isLoading">
+            <mat-spinner></mat-spinner>
+        </div>
+        <ng-container *ngIf="!isLoading">
+            <app-overview-card [auction]="auction"></app-overview-card>
+        </ng-container>
+    </div>
+</div>

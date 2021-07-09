@@ -1,0 +1,34 @@
+<div class="card-container">
+    <mat-card class="auction-card">
+      <mat-card-header>
+        <mat-card-title>{{auction.label}}</mat-card-title>
+      </mat-card-header>
+      <ng-container *ngFor="let vehicleUrl of auction.associatedVehicle.vehicleImages">
+        <img mat-card-image src="{{vehicleUrl.url}}" alt="car">
+      </ng-container>
+      <mat-card-content>
+        <p>
+          {{"EZ: " + auction.associatedVehicle.ez}} | {{"Mileage: " + auction.associatedVehicle.mileageInKm}} |
+          {{"FuelType: " + auction.associatedVehicle.fuelType}} | {{"Transmission: " +
+          auction.associatedVehicle.transmission}}
+        </p>
+        <hr>
+        <div style="display: flex;">
+          <span>
+            <p>Current Highest Bid Value: </p>
+          </span>
+          &nbsp;
+          <span>
+            <p>{{ auction.currentHighestBidValue | currency:'EUR'}}</p>
+          </span>
+  
+        </div>
+  
+      </mat-card-content>
+    </mat-card>
+  
+    <div class="remaining-time">
+      <p style="font-weight: bold;">{{auction.remainingTimeInSeconds | date: "hh:mm:ss" }}</p>
+    </div>
+  
+  </div>
